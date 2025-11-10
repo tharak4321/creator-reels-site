@@ -212,7 +212,8 @@ export default function Page() {
         <AnimatePresence initial={false} mode="wait">
           {/* @ts-expect-error framer-motion type relax */}
           {/* @ts-ignore */}
-          <motion.div
+          {/* @ts-ignore */}
+<motion.div
             key={current ? current.name : "empty"}
             style={{position:"absolute",inset:0}}
             initial={{ y: 50, opacity: 0 }}
@@ -257,14 +258,16 @@ export default function Page() {
       {/* Interstitial Monetag (once per session) */}
       <AnimatePresence>
         {interstitialFor ? (
-          <motion.div
+          {/* @ts-ignore */}
+<motion.div
             className="modal-backdrop"
             style={{position:"fixed",inset:0,background:"rgba(0,0,0,.85)",backdropFilter:"blur(6px)",display:"flex",alignItems:"center",justifyContent:"center",zIndex:50}}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <motion.div
+            {/* @ts-ignore */}
+<motion.div
               style={{padding:20,background:"rgba(17,17,20,.95)",border:"1px solid rgba(255,255,255,.12)",borderRadius:20,width:"min(92vw,380px)",position:"relative"}}
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
