@@ -49,7 +49,7 @@ const RAW_MODELS: Partial<Model>[] = [
   },
 ];
 
-const MODELS: Model[] = Object.freeze(
+const MODELS = Object.freeze(
   (Array.isArray(RAW_MODELS) ? RAW_MODELS : [])
     .filter((m) => !!m && typeof m === "object")
     .map((m) => ({
