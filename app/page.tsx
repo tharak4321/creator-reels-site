@@ -210,6 +210,7 @@ export default function Page() {
       {/* Reel Canvas */}
       <div style={{height:"100%",width:"100%",position:"relative"}}>
         <AnimatePresence initial={false} mode="wait">
+          {/* @ts-expect-error framer-motion type relax */}
           <motion.div
             key={current ? current.name : "empty"}
             style={{position:"absolute",inset:0}}
