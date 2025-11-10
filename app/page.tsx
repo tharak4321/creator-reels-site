@@ -80,7 +80,7 @@ export default function Page() {
 
   useModelDataChecks(MODELS);
 
-  const filtered: Model[] = useMemo(() => {
+  const filtered = useMemo(() => {
     const q = (query || "").trim().toLowerCase();
     if (!q) return MODELS;
     const result = MODELS.filter((m) => [m.name, ...(m.tags || [])].some((t) => t.toLowerCase().includes(q)));
