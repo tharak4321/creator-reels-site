@@ -62,7 +62,7 @@ const MODELS = Object.freeze(
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; err?: any }>{ constructor(props:{children:React.ReactNode}){super(props);this.state={hasError:false};} static getDerivedStateFromError(err:any){return{hasError:true,err};} componentDidCatch(e:any,i:any){console.error(e,i);} render(){return this.state.hasError?(<div style={{color:"#fff",padding:"20px"}}>Something went wrong</div>):this.props.children;}}
 
-function useModelDataChecks(list: Model[]) {
+function useModelDataChecks(list: readonly Model[]) {
   useEffect(() => {
     if (!Array.isArray(list)) console.error("MODELS must be array");
   }, [list]);
